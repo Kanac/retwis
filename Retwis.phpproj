@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>Retwis</Name>
+    <ProjectGuid>{b16f750e-febc-4381-917a-e873d803b79c}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <SaveServerSettingsInUserFile>false</SaveServerSettingsInUserFile>
+    <Runtime>PHP</Runtime>
+    <RuntimeVersion>7.0</RuntimeVersion>
+    <EnvName>IISExpress</EnvName>
+    <PHPDevHostName>localhost</PHPDevHostName>
+    <PHPDevAutoPort>false</PHPDevAutoPort>
+    <CustomXdebugPort>6379</CustomXdebugPort>
+    <PublishEvent>None</PublishEvent>
+    <PHPDevPort>6379</PHPDevPort>
+    <SpecificPageValue>welcome.php</SpecificPageValue>
+    <StartAction>SpecificPage</StartAction>
+    <IISProjectUrl>http://localhost:58560/</IISProjectUrl>
+    <IISExpressSslEnabled>false</IISExpressSslEnabled>
+    <IISExpressSecurePort>44300</IISExpressSecurePort>
+    <CustomServerUrl>http://localhost/phpweb/</CustomServerUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="css\style.css" />
+    <Compile Include="Predis\Cluster\Distribution\DistributionStrategyInterface.php" />
+    <Compile Include="Predis\Cluster\Distribution\EmptyRingException.php" />
+    <Compile Include="Predis\Cluster\Distribution\HashRing.php" />
+    <Compile Include="Predis\Cluster\Distribution\KetamaPureRing.php" />
+    <Compile Include="Predis\Cluster\Hash\CRC16HashGenerator.php" />
+    <Compile Include="Predis\Cluster\Hash\HashGeneratorInterface.php" />
+    <Compile Include="Predis\Cluster\CommandHashStrategyInterface.php" />
+    <Compile Include="Predis\Cluster\PredisClusterHashStrategy.php" />
+    <Compile Include="Predis\Cluster\RedisClusterHashStrategy.php" />
+    <Compile Include="Predis\Collection\Iterator\CursorBasedIterator.php" />
+    <Compile Include="Predis\Collection\Iterator\HashKey.php" />
+    <Compile Include="Predis\Collection\Iterator\Keyspace.php" />
+    <Compile Include="Predis\Collection\Iterator\ListKey.php" />
+    <Compile Include="Predis\Collection\Iterator\SetKey.php" />
+    <Compile Include="Predis\Collection\Iterator\SortedSetKey.php" />
+    <Compile Include="Predis\Command\Processor\CommandProcessingInterface.php" />
+    <Compile Include="Predis\Command\Processor\CommandProcessorChainInterface.php" />
+    <Compile Include="Predis\Command\Processor\CommandProcessorInterface.php" />
+    <Compile Include="Predis\Command\Processor\KeyPrefixProcessor.php" />
+    <Compile Include="Predis\Command\Processor\ProcessorChain.php" />
+    <Compile Include="Predis\Command\AbstractCommand.php" />
+    <Compile Include="Predis\Command\CommandInterface.php" />
+    <Compile Include="Predis\Command\ConnectionAuth.php" />
+    <Compile Include="Predis\Command\ConnectionEcho.php" />
+    <Compile Include="Predis\Command\ConnectionPing.php" />
+    <Compile Include="Predis\Command\ConnectionQuit.php" />
+    <Compile Include="Predis\Command\ConnectionSelect.php" />
+    <Compile Include="Predis\Command\HashDelete.php" />
+    <Compile Include="Predis\Command\HashExists.php" />
+    <Compile Include="Predis\Command\HashGet.php" />
+    <Compile Include="Predis\Command\HashGetAll.php" />
+    <Compile Include="Predis\Command\HashGetMultiple.php" />
+    <Compile Include="Predis\Command\HashIncrementBy.php" />
+    <Compile Include="Predis\Command\HashIncrementByFloat.php" />
+    <Compile Include="Predis\Command\HashKeys.php" />
+    <Compile Include="Predis\Command\HashLength.php" />
+    <Compile Include="Predis\Command\HashScan.php" />
+    <Compile Include="Predis\Command\HashSet.php" />
+    <Compile Include="Predis\Command\HashSetMultiple.php" />
+    <Compile Include="Predis\Command\HashSetPreserve.php" />
+    <Compile Include="Predis\Command\HashValues.php" />
+    <Compile Include="Predis\Command\KeyDelete.php" />
+    <Compile Include="Predis\Command\KeyDump.php" />
+    <Compile Include="Predis\Command\KeyExists.php" />
+    <Compile Include="Predis\Command\KeyExpire.php" />
+    <Compile Include="Predis\Command\KeyExpireAt.php" />
+    <Compile Include="Predis\Command\KeyKeys.php" />
+    <Compile Include="Predis\Command\KeyKeysV12x.php" />
+    <Compile Include="Predis\Command\KeyMove.php" />
+    <Compile Include="Predis\Command\KeyPersist.php" />
+    <Compile Include="Predis\Command\KeyPreciseExpire.php" />
+    <Compile Include="Predis\Command\KeyPreciseExpireAt.php" />
+    <Compile Include="Predis\Command\KeyPreciseTimeToLive.php" />
+    <Compile Include="Predis\Command\KeyRandom.php" />
+    <Compile Include="Predis\Command\KeyRename.php" />
+    <Compile Include="Predis\Command\KeyRenamePreserve.php" />
+    <Compile Include="Predis\Command\KeyRestore.php" />
+    <Compile Include="Predis\Command\KeyScan.php" />
+    <Compile Include="Predis\Command\KeySort.php" />
+    <Compile Include="Predis\Command\KeyTimeToLive.php" />
+    <Compile Include="Predis\Command\KeyType.php" />
+    <Compile Include="Predis\Command\ListIndex.php" />
+    <Compile Include="Predis\Command\ListInsert.php" />
+    <Compile Include="Predis\Command\ListLength.php" />
+    <Compile Include="Predis\Command\ListPopFirst.php" />
+    <Compile Include="Predis\Command\ListPopFirstBlocking.php" />
+    <Compile Include="Predis\Command\ListPopLast.php" />
+    <Compile Include="Predis\Command\ListPopLastBlocking.php" />
+    <Compile Include="Predis\Command\ListPopLastPushHead.php" />
+    <Compile Include="Predis\Command\ListPopLastPushHeadBlocking.php" />
+    <Compile Include="Predis\Command\ListPushHead.php" />
+    <Compile Include="Predis\Command\ListPushHeadX.php" />
+    <Compile Include="Predis\Command\ListPushTail.php" />
+    <Compile Include="Predis\Command\ListPushTailX.php" />
+    <Compile Include="Predis\Command\ListRange.php" />
+    <Compile Include="Predis\Command\ListRemove.php" />
+    <Compile Include="Predis\Command\ListSet.php" />
+    <Compile Include="Predis\Command\ListTrim.php" />
+    <Compile Include="Predis\Command\PrefixableCommand.php" />
+    <Compile Include="Predis\Command\PrefixableCommandInterface.php" />
+    <Compile Include="Predis\Command\PrefixHelpers.php" />
+    <Compile Include="Predis\Command\PubSubPublish.php" />
+    <Compile Include="Predis\Command\PubSubSubscribe.php" />
+    <Compile Include="Predis\Command\PubSubSubscribeByPattern.php" />
+    <Compile Include="Predis\Command\PubSubUnsubscribe.php" />
+    <Compile Include="Predis\Command\PubSubUnsubscribeByPattern.php" />
+    <Compile Include="Predis\Command\RawCommand.php" />
+    <Compile Include="Predis\Command\ScriptedCommand.php" />
+    <Compile Include="Predis\Command\ServerBackgroundRewriteAOF.php" />
+    <Compile Include="Predis\Command\ServerBackgroundSave.php" />
+    <Compile Include="Predis\Command\ServerClient.php" />
+    <Compile Include="Predis\Command\ServerConfig.php" />
+    <Compile Include="Predis\Command\ServerDatabaseSize.php" />
+    <Compile Include="Predis\Command\ServerEval.php" />
+    <Compile Include="Predis\Command\ServerEvalSHA.php" />
+    <Compile Include="Predis\Command\ServerFlushAll.php" />
+    <Compile Include="Predis\Command\ServerFlushDatabase.php" />
+    <Compile Include="Predis\Command\ServerInfo.php" />
+    <Compile Include="Predis\Command\ServerInfoV26x.php" />
+    <Compile Include="Predis\Command\ServerLastSave.php" />
+    <Compile Include="Predis\Command\ServerMonitor.php" />
+    <Compile Include="Predis\Command\ServerObject.php" />
+    <Compile Include="Predis\Command\ServerSave.php" />
+    <Compile Include="Predis\Command\ServerScript.php" />
+    <Compile Include="Predis\Command\ServerShutdown.php" />
+    <Compile Include="Predis\Command\ServerSlaveOf.php" />
+    <Compile Include="Predis\Command\ServerSlowlog.php" />
+    <Compile Include="Predis\Command\ServerTime.php" />
+    <Compile Include="Predis\Command\SetAdd.php" />
+    <Compile Include="Predis\Command\SetCardinality.php" />
+    <Compile Include="Predis\Command\SetDifference.php" />
+    <Compile Include="Predis\Command\SetDifferenceStore.php" />
+    <Compile Include="Predis\Command\SetIntersection.php" />
+    <Compile Include="Predis\Command\SetIntersectionStore.php" />
+    <Compile Include="Predis\Command\SetIsMember.php" />
+    <Compile Include="Predis\Command\SetMembers.php" />
+    <Compile Include="Predis\Command\SetMove.php" />
+    <Compile Include="Predis\Command\SetPop.php" />
+    <Compile Include="Predis\Command\SetRandomMember.php" />
+    <Compile Include="Predis\Command\SetRemove.php" />
+    <Compile Include="Predis\Command\SetScan.php" />
+    <Compile Include="Predis\Command\SetUnion.php" />
+    <Compile Include="Predis\Command\SetUnionStore.php" />
+    <Compile Include="Predis\Command\StringAppend.php" />
+    <Compile Include="Predis\Command\StringBitCount.php" />
+    <Compile Include="Predis\Command\StringBitOp.php" />
+    <Compile Include="Predis\Command\StringDecrement.php" />
+    <Compile Include="Predis\Command\StringDecrementBy.php" />
+    <Compile Include="Predis\Command\StringGet.php" />
+    <Compile Include="Predis\Command\StringGetBit.php" />
+    <Compile Include="Predis\Command\StringGetMultiple.php" />
+    <Compile Include="Predis\Command\StringGetRange.php" />
+    <Compile Include="Predis\Command\StringGetSet.php" />
+    <Compile Include="Predis\Command\StringIncrement.php" />
+    <Compile Include="Predis\Command\StringIncrementBy.php" />
+    <Compile Include="Predis\Command\StringIncrementByFloat.php" />
+    <Compile Include="Predis\Command\StringPreciseSetExpire.php" />
+    <Compile Include="Predis\Command\StringSet.php" />
+    <Compile Include="Predis\Command\StringSetBit.php" />
+    <Compile Include="Predis\Command\StringSetExpire.php" />
+    <Compile Include="Predis\Command\StringSetMultiple.php" />
+    <Compile Include="Predis\Command\StringSetMultiplePreserve.php" />
+    <Compile Include="Predis\Command\StringSetPreserve.php" />
+    <Compile Include="Predis\Command\StringSetRange.php" />
+    <Compile Include="Predis\Command\StringStrlen.php" />
+    <Compile Include="Predis\Command\StringSubstr.php" />
+    <Compile Include="Predis\Command\TransactionDiscard.php" />
+    <Compile Include="Predis\Command\TransactionExec.php" />
+    <Compile Include="Predis\Command\TransactionMulti.php" />
+    <Compile Include="Predis\Command\TransactionUnwatch.php" />
+    <Compile Include="Predis\Command\TransactionWatch.php" />
+    <Compile Include="Predis\Command\ZSetAdd.php" />
+    <Compile Include="Predis\Command\ZSetCardinality.php" />
+    <Compile Include="Predis\Command\ZSetCount.php" />
+    <Compile Include="Predis\Command\ZSetIncrementBy.php" />
+    <Compile Include="Predis\Command\ZSetIntersectionStore.php" />
+    <Compile Include="Predis\Command\ZSetRange.php" />
+    <Compile Include="Predis\Command\ZSetRangeByScore.php" />
+    <Compile Include="Predis\Command\ZSetRank.php" />
+    <Compile Include="Predis\Command\ZSetRemove.php" />
+    <Compile Include="Predis\Command\ZSetRemoveRangeByRank.php" />
+    <Compile Include="Predis\Command\ZSetRemoveRangeByScore.php" />
+    <Compile Include="Predis\Command\ZSetReverseRange.php" />
+    <Compile Include="Predis\Command\ZSetReverseRangeByScore.php" />
+    <Compile Include="Predis\Command\ZSetReverseRank.php" />
+    <Compile Include="Predis\Command\ZSetScan.php" />
+    <Compile Include="Predis\Command\ZSetScore.php" />
+    <Compile Include="Predis\Command\ZSetUnionStore.php" />
+    <Compile Include="Predis\Connection\AbstractConnection.php" />
+    <Compile Include="Predis\Connection\AggregatedConnectionInterface.php" />
+    <Compile Include="Predis\Connection\ClusterConnectionInterface.php" />
+    <Compile Include="Predis\Connection\ComposableConnectionInterface.php" />
+    <Compile Include="Predis\Connection\ComposableStreamConnection.php" />
+    <Compile Include="Predis\Connection\ConnectionException.php" />
+    <Compile Include="Predis\Connection\ConnectionFactory.php" />
+    <Compile Include="Predis\Connection\ConnectionFactoryInterface.php" />
+    <Compile Include="Predis\Connection\ConnectionInterface.php" />
+    <Compile Include="Predis\Connection\ConnectionParameters.php" />
+    <Compile Include="Predis\Connection\ConnectionParametersInterface.php" />
+    <Compile Include="Predis\Connection\MasterSlaveReplication.php" />
+    <Compile Include="Predis\Connection\PhpiredisConnection.php" />
+    <Compile Include="Predis\Connection\PhpiredisStreamConnection.php" />
+    <Compile Include="Predis\Connection\PredisCluster.php" />
+    <Compile Include="Predis\Connection\RedisCluster.php" />
+    <Compile Include="Predis\Connection\ReplicationConnectionInterface.php" />
+    <Compile Include="Predis\Connection\SingleConnectionInterface.php" />
+    <Compile Include="Predis\Connection\StreamConnection.php" />
+    <Compile Include="Predis\Connection\WebdisConnection.php" />
+    <Compile Include="Predis\Iterator\MultiBulkResponse.php" />
+    <Compile Include="Predis\Iterator\MultiBulkResponseSimple.php" />
+    <Compile Include="Predis\Iterator\MultiBulkResponseTuple.php" />
+    <Compile Include="Predis\Monitor\MonitorContext.php" />
+    <Compile Include="Predis\Option\AbstractOption.php" />
+    <Compile Include="Predis\Option\ClientCluster.php" />
+    <Compile Include="Predis\Option\ClientConnectionFactory.php" />
+    <Compile Include="Predis\Option\ClientExceptions.php" />
+    <Compile Include="Predis\Option\ClientOptions.php" />
+    <Compile Include="Predis\Option\ClientOptionsInterface.php" />
+    <Compile Include="Predis\Option\ClientPrefix.php" />
+    <Compile Include="Predis\Option\ClientProfile.php" />
+    <Compile Include="Predis\Option\ClientReplication.php" />
+    <Compile Include="Predis\Option\CustomOption.php" />
+    <Compile Include="Predis\Option\OptionInterface.php" />
+    <Compile Include="Predis\Pipeline\FireAndForgetExecutor.php" />
+    <Compile Include="Predis\Pipeline\MultiExecExecutor.php" />
+    <Compile Include="Predis\Pipeline\PipelineContext.php" />
+    <Compile Include="Predis\Pipeline\PipelineExecutorInterface.php" />
+    <Compile Include="Predis\Pipeline\SafeClusterExecutor.php" />
+    <Compile Include="Predis\Pipeline\SafeExecutor.php" />
+    <Compile Include="Predis\Pipeline\StandardExecutor.php" />
+    <Compile Include="Predis\Profile\ServerProfile.php" />
+    <Compile Include="Predis\Profile\ServerProfileInterface.php" />
+    <Compile Include="Predis\Profile\ServerVersion12.php" />
+    <Compile Include="Predis\Profile\ServerVersion20.php" />
+    <Compile Include="Predis\Profile\ServerVersion22.php" />
+    <Compile Include="Predis\Profile\ServerVersion24.php" />
+    <Compile Include="Predis\Profile\ServerVersion26.php" />
+    <Compile Include="Predis\Profile\ServerVersion28.php" />
+    <Compile Include="Predis\Profile\ServerVersionNext.php" />
+    <Compile Include="Predis\Protocol\Text\ComposableTextProtocol.php" />
+    <Compile Include="Predis\Protocol\Text\ResponseBulkHandler.php" />
+    <Compile Include="Predis\Protocol\Text\ResponseErrorHandler.php" />
+    <Compile Include="Predis\Protocol\Text\ResponseIntegerHandler.php" />
+    <Compile Include="Predis\Protocol\Text\ResponseMultiBulkHandler.php" />
+    <Compile Include="Predis\Protocol\Text\ResponseMultiBulkStreamHandler.php" />
+    <Compile Include="Predis\Protocol\Text\ResponseStatusHandler.php" />
+    <Compile Include="Predis\Protocol\Text\TextCommandSerializer.php" />
+    <Compile Include="Predis\Protocol\Text\TextProtocol.php" />
+    <Compile Include="Predis\Protocol\Text\TextResponseReader.php" />
+    <Compile Include="Predis\Protocol\CommandSerializerInterface.php" />
+    <Compile Include="Predis\Protocol\ComposableProtocolInterface.php" />
+    <Compile Include="Predis\Protocol\ProtocolException.php" />
+    <Compile Include="Predis\Protocol\ProtocolInterface.php" />
+    <Compile Include="Predis\Protocol\ResponseHandlerInterface.php" />
+    <Compile Include="Predis\Protocol\ResponseReaderInterface.php" />
+    <Compile Include="Predis\PubSub\AbstractPubSubContext.php" />
+    <Compile Include="Predis\PubSub\DispatcherLoop.php" />
+    <Compile Include="Predis\PubSub\PubSubContext.php" />
+    <Compile Include="Predis\Replication\ReplicationStrategy.php" />
+    <Compile Include="Predis\Session\SessionHandler.php" />
+    <Compile Include="Predis\Transaction\AbortedMultiExecException.php" />
+    <Compile Include="Predis\Transaction\MultiExecContext.php" />
+    <Compile Include="Predis\Autoloader.php" />
+    <Compile Include="Predis\BasicClientInterface.php" />
+    <Compile Include="Predis\Client.php" />
+    <Compile Include="Predis\ClientException.php" />
+    <Compile Include="Predis\ClientInterface.php" />
+    <Compile Include="Predis\CommunicationException.php" />
+    <Compile Include="Predis\ExecutableContextInterface.php" />
+    <Compile Include="Predis\Helpers.php" />
+    <Compile Include="Predis\NotSupportedException.php" />
+    <Compile Include="Predis\PredisException.php" />
+    <Compile Include="Predis\ResponseError.php" />
+    <Compile Include="Predis\ResponseErrorInterface.php" />
+    <Compile Include="Predis\ResponseObjectInterface.php" />
+    <Compile Include="Predis\ResponseQueued.php" />
+    <Compile Include="Predis\ServerException.php" />
+    <Compile Include=".htaccess" />
+    <Compile Include="background.png" />
+    <Compile Include="COPYING" />
+    <Compile Include="follow.php" />
+    <Compile Include="footer.php" />
+    <Compile Include="header.php" />
+    <Compile Include="home.php" />
+    <Compile Include="index.php" />
+    <Compile Include="login.php" />
+    <Compile Include="logo.png" />
+    <Compile Include="logout.php" />
+    <Compile Include="navbar.php" />
+    <Compile Include="post.php" />
+    <Compile Include="profile.php" />
+    <Compile Include="README.md" />
+    <Compile Include="register.php" />
+    <Compile Include="retwis.php" />
+    <Compile Include="timeline.php" />
+    <Compile Include="welcome.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css" />
+    <Folder Include="Predis\Cluster\Distribution" />
+    <Folder Include="Predis\Cluster\Hash" />
+    <Folder Include="Predis\Cluster" />
+    <Folder Include="Predis\Collection\Iterator" />
+    <Folder Include="Predis\Collection" />
+    <Folder Include="Predis\Command\Processor" />
+    <Folder Include="Predis\Command" />
+    <Folder Include="Predis\Connection" />
+    <Folder Include="Predis\Iterator" />
+    <Folder Include="Predis\Monitor" />
+    <Folder Include="Predis\Option" />
+    <Folder Include="Predis\Pipeline" />
+    <Folder Include="Predis\Profile" />
+    <Folder Include="Predis\Protocol\Text" />
+    <Folder Include="Predis\Protocol" />
+    <Folder Include="Predis\PubSub" />
+    <Folder Include="Predis\Replication" />
+    <Folder Include="Predis\Session" />
+    <Folder Include="Predis\Transaction" />
+    <Folder Include="Predis" />
+  </ItemGroup>
+</Project>
