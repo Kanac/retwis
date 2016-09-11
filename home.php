@@ -9,7 +9,7 @@ $r = redisLink();
 ?>
 <div id="postform">
 <form method="POST" action="post.php">
-<?php echo ($User['username'])?>, what you are doing?
+<?php echo ($User['username'])?>, what you are doing? By the way your special word is <?php echo $User['special']?> :)
 <br>
 <table>
 <tr><td><textarea cols="70" rows="3" name="status"></textarea></td></tr>

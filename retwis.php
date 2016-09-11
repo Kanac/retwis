@@ -7,7 +7,7 @@ function getrand() {
     //$fd = fopen("/dev/urandom","r");
     //$data = fread($fd,16);
     //fclose($fd);
-    return md5($data); 
+    return md5($data);
 }
 
 function isLoggedIn() {
@@ -33,6 +33,7 @@ function loadUserInfo($userid) {
     $r = redisLink();
     $User['id'] = $userid;
     $User['username'] = $r->hget("user:$userid","username");
+    $User['special'] = $r->hget("user:$userid", "special");
     return true;
 }
 
@@ -144,4 +145,15 @@ function showLastUsers() {
     echo("</div><br>");
 }
 
+function getCommonFollowing($id1, $id2){
+    $r = redisLink();
+    $r->zinterstore("inter", 2, "following:$id1", "following:$id2");
+    return $r->zcount("inter", 0, INF);
+}
+
+function getCommonFollowers($id1, $id2){
+    $r = redisLink();
+    $r->zinterstore("inter", 2, "followers:$id1", "followers:$id2");
+    return $r->zcount("inter", 0, INF);
+}
 ?>
