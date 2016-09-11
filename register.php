@@ -23,7 +23,7 @@ $authsecret = getrand();
 $r->hset("users",$username,$userid);
 $r->hmset("user:$userid",
     "username",$username,
-    "password",$password,
+    "password", md5($password),
     "auth",$authsecret,
     "special", $special);
 $r->hset("auths",$authsecret,$userid);

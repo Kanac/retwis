@@ -13,7 +13,7 @@ $userid = $r->hget("users",$username);
 if (!$userid)
     goback("Wrong username or password");
 $realpassword = $r->hget("user:$userid","password");
-if ($realpassword != $password)
+if ($realpassword != md5($password))
     goback("Wrong useranme or password");
 
 $special = $r->hget("user:$userid", "special");
