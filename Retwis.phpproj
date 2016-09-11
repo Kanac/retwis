@@ -17,7 +17,7 @@
     <CustomXdebugPort>6379</CustomXdebugPort>
     <PublishEvent>None</PublishEvent>
     <PHPDevPort>6379</PHPDevPort>
-    <SpecificPageValue>welcome.php</SpecificPageValue>
+    <SpecificPageValue>index.php</SpecificPageValue>
     <StartAction>SpecificPage</StartAction>
     <IISProjectUrl>http://localhost:58560/</IISProjectUrl>
     <IISExpressSslEnabled>false</IISExpressSslEnabled>

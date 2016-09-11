@@ -16,6 +16,8 @@ $realpassword = $r->hget("user:$userid","password");
 if ($realpassword != $password)
     goback("Wrong useranme or password");
 
+$special = $r->hget("user:$userid", "special");
+
 # Username / password OK, set the cookie and redirect to index.php
 $authsecret = $r->hget("user:$userid","auth");
 setcookie("auth",$authsecret,time()+3600*24*365);
